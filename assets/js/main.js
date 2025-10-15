@@ -21,7 +21,6 @@ const priceForKm = 0.21
 // Creo una variabile in cui collegare il bottone
 
 const btnEl = document.querySelector("button")
-console.log(btnEl);
 
 // al click del bottone mi faccio ritornare i valori degli input
 
@@ -33,21 +32,28 @@ btnEl.addEventListener("click", () => {
     // trasformo le stringhe degli input in numeri
     const km = Number(kmEl.value)
     const age = Number(ageEl.value)
-    console.log(km,age);
-    
-})
+    // console.log(km, age);
 
+    // Calcolo del prezzo
+    // Creo una variabile in cui troviamo il prezzo del biglietto
 
-// Calcolo del prezzo
-// Creo una variabile in cui troviamo il prezzo del biglietto
+    let ticketPrice = km * priceForKm
+    // console.log(ticketPrice)
 
-// SE l'età è inferiore a 18 applico il 20% di sconto
-
-// ALTRIMENTI SE l'età è maggiore a 65 applico il 40% di sconto
-
-// ALTRIMENTI salvo il prezzo normale
-
-// Dopo aver calcolato il prezzo lo arrotondo a due decimali con toFixed e lo stampo
+    // SE l'età è inferiore a 18 applico il 20% di sconto
+    if (age < 18) {
+        ticketPrice = ticketPrice * 0.8
+        // console.log(ticketPrice)
+    } else if (age >= 65) {
+        // ALTRIMENTI SE l'età è maggiore a 65 applico il 40% di sconto
+        ticketPrice = ticketPrice * 0.6
+        // console.log(ticketPrice)
+    }
+    // Dopo aver calcolato il prezzo lo arrotondo a due decimali con toFixed e lo stampo
+    ticketPrice = ticketPrice.toFixed(2)
+    console.log(ticketPrice);
+}
+)
 
 
 
