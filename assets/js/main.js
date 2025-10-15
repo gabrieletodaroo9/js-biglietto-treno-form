@@ -86,9 +86,17 @@ btnEl.addEventListener("click", (event) => {
 
     // MS2.Calcolo un numero random da 1 a 10 per i vagoni e da 1000 a 99999 per il codice del biglietto
 
-    const vagone = getRandomInt(1, 10)
-    const ticketCode = getRandomInt(1000, 99999)
-    console.log(vagone, ticketCode);
+    const vagoneNum = getRandomInt(1, 10)
+    const ticketCodeNum = getRandomInt(1000, 99999)
+    console.log(vagoneNum, ticketCodeNum);
+
+    // MS2. Aggiungo le variabili degli elementi in cui devono andare i dati 
+    
+    const passengerName = document.getElementById("passenger-name")
+    const typeOfDiscount = document.getElementById("type-of-discount")
+    const vagone = document.getElementById("vagone")
+    const ticketCode = document.getElementById("ticket-code")
+    const ticketTotalPrice = document.getElementById("ticket-total-price")
 
     // MS2. passo con textcontent tutti i risultati ai rispettivi risultati del biglietto
 
