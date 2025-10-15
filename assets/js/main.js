@@ -42,8 +42,9 @@ btnEl.addEventListener("click", (event) => {
 
     // MS2.Aggiungo la variabile del nome 
 
-    const name = document.getElementById("passenger-name-input")
-
+    const nameEl = document.getElementById("passenger-name-input")
+    const name = nameEl.value
+    console.log(name)
     // Prendo il "value" dii entrambi gli elementi
     // trasformo le stringhe degli input in numeri
     const km = Number(kmEl.value)
@@ -85,13 +86,13 @@ btnEl.addEventListener("click", (event) => {
 
     // MS2.Calcolo un numero random da 1 a 10 per i vagoni e da 1000 a 99999 per il codice del biglietto
 
-    const vagone = getRandomInt(1,10)
-    const ticketCode = getRandomInt(1000,99999)
-console.log(vagone,ticketCode);
+    const vagone = getRandomInt(1, 10)
+    const ticketCode = getRandomInt(1000, 99999)
+    console.log(vagone, ticketCode);
 
     // MS2. passo con textcontent tutti i risultati ai rispettivi risultati del biglietto
 
-    
+
 
 }
 )
