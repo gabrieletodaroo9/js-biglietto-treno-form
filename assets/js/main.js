@@ -48,7 +48,7 @@ btnEl.addEventListener("click", (event) => {
     // Prendo il "value" dii entrambi gli elementi
     // trasformo le stringhe degli input in numeri
     const km = Number(kmEl.value)
-    const age = Number(ageEl.value)
+    const age = ageEl.value
     console.log(km, age);
 
     // Calcolo del prezzo
@@ -62,12 +62,12 @@ btnEl.addEventListener("click", (event) => {
     let message = "Biglietto standard"
 
     // SE l'età è inferiore a 18 applico il 20% di sconto
-    if (age < 18) {
+    if (age === "minorenne") {
         ticketPrice = ticketPrice * 0.8
         // MS2. il biglietto da stampare sarà "Biglietto per minorenni"
         message = "Biglietto per minorenni"
 
-    } else if (age >= 65) {
+    } else if (age === "anziano") {
         // ALTRIMENTI SE l'età è maggiore a 65 applico il 40% di sconto
         ticketPrice = ticketPrice * 0.6
         // MS2.Il biglietto da stampare sarà "Biglietto per anziani"
@@ -91,7 +91,7 @@ btnEl.addEventListener("click", (event) => {
     console.log(vagoneNum, ticketCodeNum);
 
     // MS2. Aggiungo le variabili degli elementi in cui devono andare i dati 
-    
+
     const passengerName = document.getElementById("passenger-name")
     const typeOfDiscount = document.getElementById("type-of-discount")
     const vagone = document.getElementById("vagone")
@@ -100,15 +100,25 @@ btnEl.addEventListener("click", (event) => {
 
     // MS2. passo con textcontent tutti i risultati ai rispettivi risultati del biglietto
 
-   passengerName.textContent = name
-   typeOfDiscount.textContent = message
-   vagone.textContent = vagoneNum
-   ticketCode.textContent = ticketCodeNum
-   ticketTotalPrice.textContent = `${ticketPrice} €`
-   
-   // MS3. Mostro la sezione del biglietto rimuovendo la classe d-none
-   const ticketEl = document.querySelector(".ticket")
-   ticketEl.classList.remove("d-none")
+    passengerName.textContent = name
+    typeOfDiscount.textContent = message
+    vagone.textContent = vagoneNum
+    ticketCode.textContent = ticketCodeNum
+    ticketTotalPrice.textContent = `${ticketPrice} €`
+
+    // MS3. Mostro la sezione del biglietto rimuovendo la classe d-none
+    const ticketEl = document.querySelector(".ticket")
+    ticketEl.classList.remove("d-none")
+
+    // MS3.Aggiungo una variabile per il pulsante di reset e al click aggiungo la classe d-none al biglietto
+
+    const resetBtn = document.getElementById("reset-button")
+
+    resetBtn.addEventListener("click", () => {
+        ticketEl.classList.add("d-none")
+    }
+    )
+
 }
 )
 

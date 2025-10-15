@@ -33,7 +33,12 @@
                 </div>
                 <div class="mb-4 d-flex flex-column">
                     <label class="form-label fw-bold fs-2" for="age">Età del passeggero</label>
-                    <input class="form-control fs-4" type="text" id="age" placeholder="Inserisci qui la tua età">
+                   <select class="form-select fs-4" id="age">
+            <option disabled>Seleziona la tua fascia di età</option>
+            <option value="minorenne">Minorenne (sconto 20%)</option>
+            <option value="normale">18-64</option>
+            <option value="anziano">Over 65 (sconto 40%)</option>
+        </select>
                 </div>
 
                 <button class="btn w-100 btn-dark rounded-pill px-5 py-2 mb-2 fs-2 fw-bold" id="buy-button">Acquista biglietto</button>
@@ -43,7 +48,7 @@
             </form>
         </div>
 
-        <div class="card border-dark ticket mt-5 d-none">
+        <div class="card border-dark ticket mt-2 d-none">
             <div class="card-header bg-dark text-light text-center">
                 <h2 class="fw-bold fs-2">Il tuo biglietto</h2>
             </div>
