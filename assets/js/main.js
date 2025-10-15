@@ -100,8 +100,11 @@ btnEl.addEventListener("click", (event) => {
 
     // MS2. passo con textcontent tutti i risultati ai rispettivi risultati del biglietto
 
-
-
+   passengerName.textContent = name
+   typeOfDiscount.textContent = message
+   vagone.textContent = vagoneNum
+   ticketCode.textContent = ticketCodeNum
+   ticketTotalPrice.textContent = `${ticketPrice} €`
 }
 )
 
