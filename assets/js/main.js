@@ -16,11 +16,27 @@
 
 // Creo una variabile per assegnare il prezzo al km
 
+const priceForKm = 0.21
+
 // Creo una variabile in cui collegare il bottone
+
+const btnEl = document.querySelector("button")
+console.log(btnEl);
 
 // al click del bottone mi faccio ritornare i valori degli input
 
-// trasformo le stringhe degli input in numeri
+btnEl.addEventListener("click", () => {
+    // Creo due variabili per usare i due input
+    const kmEl = document.getElementById("km")
+    const ageEl = document.getElementById("age")
+    // Prendo il "value" dii entrambi gli elementi
+    // trasformo le stringhe degli input in numeri
+    const km = Number(kmEl.value)
+    const age = Number(ageEl.value)
+    console.log(km,age);
+    
+})
+
 
 // Calcolo del prezzo
 // Creo una variabile in cui troviamo il prezzo del biglietto
@@ -36,7 +52,7 @@
 
 
 // MILESTONE 2:
-// Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo. 
+// Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo.
 // Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
 // MILESTONE 3:
