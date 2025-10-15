@@ -33,14 +33,16 @@ const priceForKm = 0.21
 const btnEl = document.getElementById("buy-button")
 
 // al click del bottone mi faccio ritornare i valori degli input
-  // MS2.Aggiunto evento per non far scomparire i dati del form
+// MS2.Aggiunto evento per non far scomparire i dati del form
 btnEl.addEventListener("click", (event) => {
     event.preventDefault()
     // Creo due variabili per usare i due input
     const kmEl = document.getElementById("km")
     const ageEl = document.getElementById("age")
 
-      // MS2.Aggiungo la variabile del nome 
+    // MS2.Aggiungo la variabile del nome 
+
+    const name = document.getElementById("passenger-name-input")
 
     // Prendo il "value" dii entrambi gli elementi
     // trasformo le stringhe degli input in numeri
@@ -54,32 +56,43 @@ btnEl.addEventListener("click", (event) => {
     let ticketPrice = km * priceForKm
     console.log(ticketPrice)
 
-      // MS2. Aggiungo una variabile per il tipo di biglietto da stampare in pagina
+    // MS2. Aggiungo una variabile per il tipo di biglietto da stampare in pagina
+
+    let message = "Biglietto standard"
 
     // SE l'età è inferiore a 18 applico il 20% di sconto
     if (age < 18) {
         ticketPrice = ticketPrice * 0.8
-        
-          // MS2. il biglietto da stampare sarà "Biglietto per minorenni"
+        // MS2. il biglietto da stampare sarà "Biglietto per minorenni"
+        message = "Biglietto per minorenni"
 
-        console.log(ticketPrice)
     } else if (age >= 65) {
         // ALTRIMENTI SE l'età è maggiore a 65 applico il 40% di sconto
         ticketPrice = ticketPrice * 0.6
-        
-          // MS2.Il biglietto da stampare sarà "Biglietto per anziani"
-
-        console.log(ticketPrice)
+        // MS2.Il biglietto da stampare sarà "Biglietto per anziani"
+        message = "Biglietto per anziani"
     }
+
     // Dopo aver calcolato il prezzo lo arrotondo a due decimali con toFixed e lo stampo
     ticketPrice = ticketPrice.toFixed(2)
     console.log(ticketPrice);
 
-      // MS2. Aggiungo funzione per calcolare numeri random
+    // MS2. Aggiungo funzione per calcolare numeri random
 
-      // MS2.Calcolo un numero random da 1 a 10 per i vagoni e da 1000 a 99999 per il codice del biglietto
+    const getRandomInt = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
 
-      // MS2. passo con textcontent tutti i risultati ai rispettivi risultati del biglietto
+    // MS2.Calcolo un numero random da 1 a 10 per i vagoni e da 1000 a 99999 per il codice del biglietto
+
+    const vagone = getRandomInt(1,10)
+    const ticketCode = getRandomInt(1000,99999)
+console.log(vagone,ticketCode);
+
+    // MS2. passo con textcontent tutti i risultati ai rispettivi risultati del biglietto
+
+    
+
 }
 )
 
