@@ -105,8 +105,13 @@ btnEl.addEventListener("click", (event) => {
    vagone.textContent = vagoneNum
    ticketCode.textContent = ticketCodeNum
    ticketTotalPrice.textContent = `${ticketPrice} €`
+   
+   // MS3. Mostro la sezione del biglietto rimuovendo la classe d-none
+   const ticketEl = document.querySelector(".ticket")
+   ticketEl.classList.remove("d-none")
 }
 )
+
 
 
 

@@ -18,42 +18,48 @@
 
 <!-- BODY -->
 
-<body>
-    <div class="container">
-        <h1 class="text-center my-5">Acquista il biglietto ferroviario</h1>
+<body style="background-image: url(https://images.unsplash.com/photo-1535535112387-56ffe8db21ff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJlbm98ZW58MHx8MHx8fDA%3D);background-size: cover; height: 100vh;">
+    <div class="container text-white">
+        <h1 class="text-center my-5 fw-bold text-white">Acquista il biglietto ferroviario</h1>
         <div>
             <form>
-                <label for="passenger-name-input">Nome Passeggero</label>
-                <input type="text" id="passenger-name-input" placeholder="Inserisci qui il tuo nome">
-                <label for="km">Km da percorrere</label>
-                <input type="text" id="km" placeholder="Inserisci qui i km">
-                <label for="age">Età del passeggero</label>
-                <input type="text" id="age" placeholder="Inserisci qui la tua età">
+                <div class="mb-3 d-flex flex-column">
+                    <label class="form-label fw-bold fs-2" for="passenger-name-input">Nome Passeggero</label>
+                    <input class="form-control fs-4" type="text" id="passenger-name-input" placeholder="Inserisci qui il tuo nome">
+                </div>
+                <div class="mb-3 d-flex flex-column">
+                    <label class="form-label fw-bold fs-2" for="km">Km da percorrere</label>
+                    <input class="form-control fs-4" type="text" id="km" placeholder="Inserisci qui i km">
+                </div>
+                <div class="mb-4 d-flex flex-column">
+                    <label class="form-label fw-bold fs-2" for="age">Età del passeggero</label>
+                    <input class="form-control fs-4" type="text" id="age" placeholder="Inserisci qui la tua età">
+                </div>
 
-                <button id="buy-button">Acquista biglietto</button>
+                <button class="btn w-100 btn-dark rounded-pill px-5 py-2 mb-5 fs-2 fw-bold" id="buy-button">Acquista biglietto</button>
 
             </form>
         </div>
 
-        <div class="card ticket mt-5">
-            <div class="card-header">
-                <h2>Il tuo biglietto</h2>
+        <div class="card border-dark ticket mt-5 d-none">
+            <div class="card-header bg-dark text-light text-center">
+                <h2 class="fw-bold fs-2">Il tuo biglietto</h2>
             </div>
-            <div class="card-body">
-                <p>Nome passeggero:
-                    <span id="passenger-name"></span>
+            <div class="card-body p-4">
+                <p class="fw-bold fs-4">Nome passeggero:
+                    <span class="text-secondary" id="passenger-name"></span>
                 </p>
-                <p>Offerta:
-                    <span id="type-of-discount"></span>
+                <p class="fw-bold fs-4">Offerta:
+                    <span class="text-secondary" id="type-of-discount"></span>
                 </p>
-                <p>Carrozza:
-                    <span id="vagone"></span>
+                <p class="fw-bold fs-4 ">Carrozza:
+                    <span class="text-secondary" id="vagone"></span>
                 </p>
-                <p>Codice:
-                    <span id="ticket-code"></span>
+                <p class="fw-bold fs-4 ">Codice:
+                    <span class="text-secondary" id="ticket-code"></span>
                 </p>
-                <p>Costo biglietto:
-                    <span id="ticket-total-price"></span>
+                <p class="text-end fw-bold fs-1">Costo biglietto:
+                    <span class="text-secondary" id="ticket-total-price"></span>
                 </p>
             </div>
         </div>
