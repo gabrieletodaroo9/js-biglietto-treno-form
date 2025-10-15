@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Js-biglietto-treno-form</title>
 
-<!-- CSS -->
+    <!-- CSS -->
 
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -14,14 +14,32 @@
 <!-- BODY -->
 
 <body>
-    <label for="km">Km da percorrere</label>
-    <input type="text" id="km" placeholder="Inserisci qui i km">
-    <label for="age">Età del passeggero</label>
-    <input type="text" id="age" placeholder="Inserisci qui la tua età">
+    <div class="container">
 
-    <button>Acquista biglietto</button>
+        <form>
+<label for="passenger-name-input">Nome Passeggero</label>
+<input type="text" id="passenger-name-input"placeholder="Inserisci qui il tuo nome">
+            <label for="km">Km da percorrere</label>
+            <input type="text" id="km" placeholder="Inserisci qui i km">
+            <label for="age">Età del passeggero</label>
+            <input type="text" id="age" placeholder="Inserisci qui la tua età">
 
-<!-- SCRIPT -->
+            <button id="buy-button">Acquista biglietto</button>
+
+        </form>
+        <div class="ticket">
+           <h2>Il tuo biglietto</h2>
+           <p>Nome passeggero:<span id="passenger-name"></span></p>
+           <p>Offerta:<span id="type-of-discount"></span></p>
+           <p>Carrozza: <span id="vagone"></span> </p>
+           <p>Codice: <span id="identificative-code"></span></p>
+           <p>Costo biglietto: <span id="ticket-price"></span></p>
+
+
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
 
     <script src="./assets/js/main.js"></script>
 </body>

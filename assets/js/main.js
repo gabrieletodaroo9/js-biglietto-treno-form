@@ -14,53 +14,83 @@
 // MILESTONE 1:
 // Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati), realizziamo le specifiche scritte sopra. La risposta finale (o output) sarà anch’essa da scrivere in console. 
 
-// Creo una variabile per assegnare il prezzo al km
-
-const priceForKm = 0.21
-
-// Creo una variabile in cui collegare il bottone
-
-const btnEl = document.querySelector("button")
-
-// al click del bottone mi faccio ritornare i valori degli input
-
-btnEl.addEventListener("click", () => {
-    // Creo due variabili per usare i due input
-    const kmEl = document.getElementById("km")
-    const ageEl = document.getElementById("age")
-    // Prendo il "value" dii entrambi gli elementi
-    // trasformo le stringhe degli input in numeri
-    const km = Number(kmEl.value)
-    const age = Number(ageEl.value)
-    // console.log(km, age);
-
-    // Calcolo del prezzo
-    // Creo una variabile in cui troviamo il prezzo del biglietto
-
-    let ticketPrice = km * priceForKm
-    // console.log(ticketPrice)
-
-    // SE l'età è inferiore a 18 applico il 20% di sconto
-    if (age < 18) {
-        ticketPrice = ticketPrice * 0.8
-        // console.log(ticketPrice)
-    } else if (age >= 65) {
-        // ALTRIMENTI SE l'età è maggiore a 65 applico il 40% di sconto
-        ticketPrice = ticketPrice * 0.6
-        // console.log(ticketPrice)
-    }
-    // Dopo aver calcolato il prezzo lo arrotondo a due decimali con toFixed e lo stampo
-    ticketPrice = ticketPrice.toFixed(2)
-    console.log(ticketPrice);
-}
-)
-
-
-
 // MILESTONE 2:
 // Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo.
 // Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
 // MILESTONE 3:
 // Ora che la logica è funzionante in pagina, possiamo andare a dedicarci allo stile, raffinando la parte di HTML e CSS in modo da renderla esteticamente gradevole.
+
+
+
+
+// Creo una variabile per assegnare il prezzo al km
+
+const priceForKm = 0.21
+
+// Creo una variabile in cui collegare il bottone
+
+const btnEl = document.getElementById("buy-button")
+
+// al click del bottone mi faccio ritornare i valori degli input
+  // MS2.Aggiunto evento per non far scomparire i dati del form
+btnEl.addEventListener("click", (event) => {
+    event.preventDefault()
+    // Creo due variabili per usare i due input
+    const kmEl = document.getElementById("km")
+    const ageEl = document.getElementById("age")
+
+      // MS2.Aggiungo la variabile del nome 
+
+    // Prendo il "value" dii entrambi gli elementi
+    // trasformo le stringhe degli input in numeri
+    const km = Number(kmEl.value)
+    const age = Number(ageEl.value)
+    console.log(km, age);
+
+    // Calcolo del prezzo
+    // Creo una variabile in cui troviamo il prezzo del biglietto
+
+    let ticketPrice = km * priceForKm
+    console.log(ticketPrice)
+
+      // MS2. Aggiungo una variabile per il tipo di biglietto da stampare in pagina
+
+    // SE l'età è inferiore a 18 applico il 20% di sconto
+    if (age < 18) {
+        ticketPrice = ticketPrice * 0.8
+        
+          // MS2. il biglietto da stampare sarà "Biglietto per minorenni"
+
+        console.log(ticketPrice)
+    } else if (age >= 65) {
+        // ALTRIMENTI SE l'età è maggiore a 65 applico il 40% di sconto
+        ticketPrice = ticketPrice * 0.6
+        
+          // MS2.Il biglietto da stampare sarà "Biglietto per anziani"
+
+        console.log(ticketPrice)
+    }
+    // Dopo aver calcolato il prezzo lo arrotondo a due decimali con toFixed e lo stampo
+    ticketPrice = ticketPrice.toFixed(2)
+    console.log(ticketPrice);
+
+      // MS2. Aggiungo funzione per calcolare numeri random
+
+      // MS2.Calcolo un numero random da 1 a 10 per i vagoni e da 1000 a 99999 per il codice del biglietto
+
+      // MS2. passo con textcontent tutti i risultati ai rispettivi risultati del biglietto
+}
+)
+
+
+
+
+
+
+
+
+
+
+
 
